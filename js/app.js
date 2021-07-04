@@ -18,5 +18,11 @@ config(['$routeProvider', function($routeProvider) {
   when("/gallery-four-columns", {templateUrl: "gallery-four-columns.html", controller: "FarmAutomationAppController"}).
 	when("/gallery-three-columns", {templateUrl: "gallery-three-columns.html", controller: "FarmAutomationAppController"}).
   when("/gallery-two-columns", {templateUrl: "gallery-two-columns.html", controller: "FarmAutomationAppController"}).
+  when("/masonry-gallery", {templateUrl: "masonry-gallery.html", controller: "FarmAutomationAppController"}).
+  when("/pricing", {templateUrl: "pricing.html", controller: "FarmAutomationAppController"}).
+  when("/products-details", {templateUrl: "products-details.html", controller: "FarmAutomationAppController"}).
+  when("/products", {templateUrl: "products.html", controller: "FarmAutomationAppController"}).
+  when("/services", {templateUrl: "services.html", controller: "FarmAutomationAppController"}).
+  when("/testimonials", {templateUrl: "testimonials.html", controller: "FarmAutomationAppController"}).
   otherwise({redirectTo: '/home'});
 }]);
