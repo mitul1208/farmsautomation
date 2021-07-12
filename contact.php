@@ -1,8 +1,8 @@
 <?php
 
 // Email configuration
-$from = 'Email received from <info@farmsautomation.com>';
-$sendTo = 'Email sent to <info@farmsautomation.com>';
+$from = 'Email received from <farmsautomation@gmail.com>';
+$sendTo = 'Email sent to <farmsautomation@gmail.com>';
 $subject = 'You have received a new email';
 $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); // array variable name => Text to appear in the email
 $okMessage = 'Your message has been sent successfully!';
