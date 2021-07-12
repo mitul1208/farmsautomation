@@ -1,46 +1,13 @@
 <?php
+$to = "farmautomations@gmail.com";
 
-// Email configuration
-$from = 'Email received from <farmsautomation@gmail.com>';
-$sendTo = 'Email sent to <farmsautomation@gmail.com>';
-$subject = 'You have received a new email';
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); // array variable name => Text to appear in the email
-$okMessage = 'Your message has been sent successfully!';
-$errorMessage = 'An error was encountered while sending the message, please try again';
+$headers = "From: $email_from \r\n";
 
-try
-{
-    $emailText = "You have received a new message\n****************************************\n";
+$headers .= "Reply-To: $visitor_email \r\n";
 
-    foreach ($_POST as $key => $value) {
+$headers .= "Cc: someone@domain.com \r\n";
 
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
-        }
-    }
+$headers .= "Bcc: someoneelse@domain.com \r\n";
 
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
-    );
-    
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
-
-    $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
-}
-
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
-    header('Content-Type: application/json');
-
-    echo $encoded;
-}
-else {
-    echo $responseArray['message'];
-}
+mail($to,$email_subject,$email_body,$headers);
+?>
