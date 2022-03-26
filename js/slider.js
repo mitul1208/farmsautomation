@@ -1,6 +1,6 @@
 var options = {
     autoPlay: true, 
-    autoPlay: 4000,
+    autoPlay: 2000,
     accessibility: true,
     prevNextButtons: true,
     pageDots: true,
